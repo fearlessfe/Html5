@@ -19,6 +19,10 @@
     <link rel="stylesheet" type="text/css" href="../css/H5ComponentBase.css">
 
     <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+        }
     </style>
 
 
@@ -30,6 +34,62 @@
     <!-- 内容组织管理，有可能会加载若干个资源 -->
 
     <script type="text/javascript">
+        $(function () {
+            var h5 = new H5();
+            h5
+            .addPage('face')
+                .addComponent('logo',{
+                    text:'logo',
+                    width: 400,
+                    height: 100,
+                    css:{
+                        backgroundColor: 'red',
+                        top: 150,
+                        opacity: 0,
+                    },
+                    center: true,
+                    animateIn: {//设置进场动画
+                   
+                        opacity: 1,
+                    },
+                    animateOut: {
+                        opacity: 0,
+                    },
+                })
+                .addComponent('slogan',{
+                    text: 'slogan',
+                    width: 400,
+                    height: 100,
+                    css:{
+                        backgroundColor: 'blue',
+                        top: 200,
+                    },
+                    center: true,
+                })
+            .addPage('desc')
+                .addComponent('caption',{
+                    text: '核心理念',
+                    width: 400,
+                    height: 100,
+                    css:{
+                        backgroundColor: 'red',
+                        top: 200,
+                    },
+                    center: true,
+                })
+            .addPage('page-2')
+                .addComponent('caption',{
+                    text: '课程分布方向',
+                    width: 400,
+                    height: 100,
+                    css:{
+                        backgroundColor: 'red',
+                        top: 200,
+                    },
+                    center: true,
+                })
+            .loader();
+        })
     </script>
 </body>
 

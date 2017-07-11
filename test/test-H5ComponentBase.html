@@ -36,7 +36,40 @@
         </div>
 
         <script type="text/javascript">
+            var cfg = {
+                type: 'base',//组件类型
+                text: 'text',//组件文本
+                width: 514,  //组件宽度
+                height: 306, //组件高度 
+                // 由于图片实际宽高与屏幕显示宽高会存在区别
+                // 所以写在css外面
+                
+                css: {//设置组件css
+                     
+                    backgroundImage: "url('../imgs/p1_people.png')",
+                    bottom: 0,
+                    opacity: 0,
 
+                },
+                animateIn: {//设置进场动画
+                    bottom: 80,
+                    opacity: 1,
+                },
+                animateOut: {//设置出场动画
+                    bottom: 0,
+                    opacity: 0,
+                },
+                center: true, // 水平居中
+            };
+            var h5 = new H5ComponentBase('myName',cfg);
+            $('.iphone').append(h5);
+
+            var leave = true;
+            $('body').click(function(){
+                leave = !leave;
+
+                $('.h5_component').trigger(leave?'onLeave':'onLoad');
+            })
 
         </script>
 

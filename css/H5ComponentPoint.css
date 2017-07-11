@@ -1,1 +1,5 @@
 /* 散点图组件样式 */
+.point{
+	position: absolute;
+	border-radius: 50%;
+}
